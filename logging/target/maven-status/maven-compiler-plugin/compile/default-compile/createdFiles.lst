@@ -1,8 +1,0 @@
-edu\jit\stackfarm\xzy\logging\aspect\MethodExecIdAspect.class
-edu\jit\stackfarm\xzy\logging\annotation\LoggingConfiguration.class
-edu\jit\stackfarm\xzy\logging\annotation\LogParam.class
-edu\jit\stackfarm\xzy\logging\annotation\LogExecTime.class
-edu\jit\stackfarm\xzy\logging\interceptor\LogAspectSupport.class
-edu\jit\stackfarm\xzy\logging\annotation\EnableLogging.class
-edu\jit\stackfarm\xzy\logging\aspect\AnnotationLogAspect.class
-edu\jit\stackfarm\xzy\logging\annotation\LogReturnValue.class
