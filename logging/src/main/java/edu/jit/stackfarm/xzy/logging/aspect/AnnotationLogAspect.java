@@ -17,16 +17,16 @@ public class AnnotationLogAspect extends LogAspectSupport {
 
     private final Logger logger = LoggerFactory.getLogger(AnnotationLogAspect.class);
 
-    @Pointcut("@annotation(edu.jit.stackfarm.xzy.logging.annotation.LogExecTime)")
-    public void logExecTimeMethod() {
+    @Pointcut("@annotation(edu.jit.stackfarm.xzy.logging.annotation.LogExecDuration)")
+    public void logExecDurationMethod() {
     }
 
-    @Pointcut("@within(edu.jit.stackfarm.xzy.logging.annotation.LogExecTime)")
-    public void logExecTimeClass() {
+    @Pointcut("@within(edu.jit.stackfarm.xzy.logging.annotation.LogExecDuration)")
+    public void logExecDurationClass() {
     }
 
-    @Pointcut("logExecTimeClass() || logExecTimeMethod()")
-    public void logExecTime() {
+    @Pointcut("logExecDurationClass() || logExecDurationMethod()")
+    public void logExecDuration() {
     }
 
     @Pointcut("@annotation(edu.jit.stackfarm.xzy.logging.annotation.LogParam)")
@@ -53,11 +53,11 @@ public class AnnotationLogAspect extends LogAspectSupport {
     public void logReturnValue() {
     }
 
-    @Pointcut("logExecTime() || logParam() || logReturnValue()")
+    @Pointcut("logExecDuration() || logParam() || logReturnValue()")
     public void needLog() {
     }
 
-    @Around("logExecTime()")
+    @Around("logExecDuration()")
     public Object processLogExecTimeAnnotation(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
         Object ret = joinPoint.proceed();
