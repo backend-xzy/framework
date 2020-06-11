@@ -18,14 +18,38 @@ public class AnnotationLogAspect extends LogAspectSupport {
     private final Logger logger = LoggerFactory.getLogger(AnnotationLogAspect.class);
 
     @Pointcut("@annotation(edu.jit.stackfarm.xzy.logging.annotation.LogExecTime)")
+    public void logExecTimeMethod() {
+    }
+
+    @Pointcut("@within(edu.jit.stackfarm.xzy.logging.annotation.LogExecTime)")
+    public void logExecTimeClass() {
+    }
+
+    @Pointcut("logExecTimeClass() || logExecTimeMethod()")
     public void logExecTime() {
     }
 
     @Pointcut("@annotation(edu.jit.stackfarm.xzy.logging.annotation.LogParam)")
+    public void logParamMethod() {
+    }
+
+    @Pointcut("@within(edu.jit.stackfarm.xzy.logging.annotation.LogParam)")
+    public void logParamClass() {
+    }
+
+    @Pointcut("logParamMethod() || logParamClass()")
     public void logParam() {
     }
 
     @Pointcut("@annotation(edu.jit.stackfarm.xzy.logging.annotation.LogReturnValue)")
+    public void logReturnValueMethod() {
+    }
+
+    @Pointcut("@within(edu.jit.stackfarm.xzy.logging.annotation.LogReturnValue)")
+    public void logReturnValueClass() {
+    }
+
+    @Pointcut("logReturnValueMethod() || logReturnValueClass()")
     public void logReturnValue() {
     }
 
