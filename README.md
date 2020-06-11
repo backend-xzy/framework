@@ -12,3 +12,6 @@ install it and add it into your dependencies
     <version>1.0.0-SNAPSHOT</version>
 </dependency>
 ```
+## how to use
+### logging
+put `@EnableLogging` on your configuration class and put `@LogExecTime`/`@LogParam`/`@LogReturnValue` on your class/method that needs to be logged
